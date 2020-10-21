@@ -1,1 +1,34 @@
 Algorytmy i Struktury danych
+
+
+Zadanie 1.
+Przygotować implementację listy jednokierunkowej wg następujących wymagań:
+
+klasa Node będzie reprezentacją węzła
+klasa LinkedList będzie reprezentacją listy jednokierunkowej
+metoda push umieści nowy węzeł na początku listy
+metoda append umieści nowy węzeł na końcu listy
+metoda node zwróci węzeł znajdujący się na wskazanej pozycji
+metoda insert wstawi nowy węzeł tuż za węzłem wskazanym w parametrze
+metoda pop usunie pierwszy element z listy i go zwróci
+metoda remove_last usunie ostatni element z listy i go zwróci
+metoda remove usunie z listy następnik węzła przekazanego w parametrze
+metoda print wywołana na obiekcie listy zawierającym 2 elementy [0, 1] wyświetli na ekranie "0 -> 1"
+metoda len wywołana na obiekcie listy zwróci jej długość
+
+
+Zadanie 3¶
+Kolejka FIFO (first input, first output)
+
+Kolejka FIFO to abstrakcyjna struktura danych pełniąca rolę bufora. Element dodany jako pierwszy zostaje również "zdjęty" jako pierwszy, co można rozumieć przez analogię do kolejki w sklepie.
+
+Przygotować implementację kolejki FIFO według następujących wymagań:
+
+klasa Queue będzie reprezentacją kolejki FIFO
+do przechowywania wartości wewnątrz kolejki FIFO wykorzystać własną implementację listy (LinkedList)
+wywołanie inicjalizatora klasy Queue utworzy pustą kolejkę
+metoda peek zwróci wartość pierwszego elementu w kolejce
+metoda enqueue umieści nowy element na końcu kolejki
+metoda dequeue zwróci i usunie pierwszy element w kolejce
+wywołanie funkcji print na obiekcie kolejki wypisze na ekranie jej elementy we właściwej kolejności
+wywołanie funkcji len na obiekcie kolejki zwróci jej liczebność
