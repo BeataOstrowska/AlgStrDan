@@ -23,10 +23,10 @@ class LinkedList:
     def push(self, value):
         el = Node(value)
         el.next = self.head
+        self.head = el
         if self.tail == None:
             self.tail = el
-        self.head = el
-
+        
     def append(self,value):
         el = Node(value)
         if self.head == None:
@@ -37,11 +37,11 @@ class LinkedList:
             self.tail = el       
             
     def node(self, value):
-        # a = self.len
-        # print(a)
-        #if a < value:
-         #   return "Error"
+        if len(self) < value:
+            return "Error" # error wbudowany 
         poz = value
+        if poz < 0: # dla pozycji mniejszych od 0 wyświetl pierwszy element
+            poz = 0
         el = self.head
         while poz:
             el = el.next
@@ -51,9 +51,8 @@ class LinkedList:
     def insert(self, value, after):
         el = Node(value) #nowy wezel
         n = self.head # poz=0
-        while n.value != after.value :
+        while n != after :
             n = n.next 
-        #print(n.value)
         el.next = n.next
         n.next = el
         
@@ -77,8 +76,10 @@ class LinkedList:
         deleted = node.next 
         node.next = deleted.next
 
-    #print
-    def len(self):
+    def __print__(self):
+        return self.__repr__()
+        
+    def __len__(self):
         v= 0
         node = self.head
         while node:
@@ -108,8 +109,6 @@ first_element = list_.node(0)
 returned_first_element = list_.pop()
 
 assert first_element.value == returned_first_element
-#print(first_element.value)
-#print(str(list_))
 
 last_element = list_.node(3)
 returned_last_element = list_.remove_last()
@@ -121,4 +120,4 @@ second_node = list_.node(1)
 list_.remove(second_node)
 
 assert str(list_) == '1 -> 5'
-#print (str(list_))
+
