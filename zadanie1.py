@@ -34,12 +34,11 @@ class LinkedList:
             self.tail = el
         else:
             self.tail.next = el
-            self.tail = el
-        
+            self.tail = el       
             
     def node(self, value):
-        a = .len
-        print(a)
+        # a = self.len
+        # print(a)
         #if a < value:
          #   return "Error"
         poz = value
@@ -47,11 +46,37 @@ class LinkedList:
         while poz:
             el = el.next
             poz -= 1
-        return  el.value
-    #insert
-    #pop
-    #remove_last
-    #remove
+        return  el
+
+    def insert(self, value, after):
+        el = Node(value) #nowy wezel
+        n = self.head # poz=0
+        while n.value != after.value :
+            n = n.next 
+        #print(n.value)
+        el.next = n.next
+        n.next = el
+        
+
+    def pop(self):
+        first = self.head
+        self.head = first.next
+        return first.value
+
+
+    def remove_last(self):
+        last = self.tail 
+        node = self.head
+        while node.next != last:
+            node = node.next
+        node.next = None
+        self.tail = node
+        return last.value
+
+    def remove(self, node):
+        deleted = node.next 
+        node.next = deleted.next
+
     #print
     def len(self):
         v= 0
@@ -75,23 +100,25 @@ list_.append(10)
 assert str(list_) == '0 -> 1 -> 9 -> 10'
 
 middle_node = list_.node(1)
-print(middle_node)
-# list_.insert(5, after=middle_node)
+list_.insert(5, after = middle_node)
 
-# assert str(list_) == '0 -> 1 -> 5 -> 9 -> 10'
+assert str(list_) == '0 -> 1 -> 5 -> 9 -> 10'
 
-# first_element = list_.node(at=0)
-# returned_first_element = list_.pop()
+first_element = list_.node(0)
+returned_first_element = list_.pop()
 
-# assert first_element.value == returned_first_element
+assert first_element.value == returned_first_element
+#print(first_element.value)
+#print(str(list_))
 
-# last_element = list_.node(at=3)
-# returned_last_element = list_.remove_last()
+last_element = list_.node(3)
+returned_last_element = list_.remove_last()
 
-# assert last_element.value == returned_last_element
-# assert str(list_) == '1 -> 5 -> 9'
+assert last_element.value == returned_last_element
+assert str(list_) == '1 -> 5 -> 9'
 
-# second_node = list_.node(at=1)
-# list_.remove(second_node)
+second_node = list_.node(1)
+list_.remove(second_node)
 
-# assert str(list_) == '1 -> 5'
+assert str(list_) == '1 -> 5'
+#print (str(list_))
