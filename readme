@@ -17,7 +17,7 @@ metoda print wywołana na obiekcie listy zawierającym 2 elementy [0, 1] wyświe
 metoda len wywołana na obiekcie listy zwróci jej długość
 
 
-Zadanie 3¶
+Zadanie 3
 Kolejka FIFO (first input, first output)
 
 Kolejka FIFO to abstrakcyjna struktura danych pełniąca rolę bufora. Element dodany jako pierwszy zostaje również "zdjęty" jako pierwszy, co można rozumieć przez analogię do kolejki w sklepie.
